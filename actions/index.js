@@ -12,24 +12,30 @@ import actionTypes from './actionTypes';
 // and some other params which will be used inside the reducer
 // It's following the FSA convention: https://github.com/acdlite/flux-standard-action#flux-standard-action
 export const changeValue = (event) => {
-    return {
-        type: actionTypes.CHANGE_VALUE,
-        payload: {
-            newValue: event.target.value,
-        },
-    };
+	return {
+		type: actionTypes.CHANGE_VALUE,
+		payload: {
+			newValue: event.target.value,
+		},
+	};
 };
 
 // TODO: IMPLEMENT ME
 // I work with /reducers/exercise1.js
-export const buttonClicked = () => {
+export const buttonClicked = (event) => {
+	return {
+		type: actionTypes.BUTTON_CLICKED,
+		payload: {
+			buttonWhoGotClickedName: event.target.name,
+		}
+	}
 };
 
 export const boxTicked = (event) => {
-    return {
-        type: actionTypes.BOX_TICKED,
-        payload: {
-            hasTickedBox: event.target.checked,
-        },
-    };
+	return {
+		type: actionTypes.BOX_TICKED,
+		payload: {
+			hasTickedBox: event.target.checked,
+		},
+	};
 };
